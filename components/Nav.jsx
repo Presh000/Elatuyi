@@ -3,7 +3,7 @@
 import { useState } from "react"; // import useState hook from react
 import Link from "next/link"; // import Link component from next.js
 
-const Nav = () => {
+export default function Nav () {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   return (
     <div className="pt-4 pb-12 px-5 sm:px-20 md:px-32 lg:px-32 text-center ">
@@ -122,4 +122,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+
