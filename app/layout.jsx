@@ -5,10 +5,10 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 // import Nav from '@components/Nav';
-export const metadata = {
-  title: "Omotola's Blog",
-  description: "a blog about business, tech, and life",
-};
+// export const metadata = {
+//   title: "Omotola's Blog",
+//   description: "a blog about business, tech, and life",
+// };
 
 const RootLayout = ({ children }) => {
   return (
