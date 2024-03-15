@@ -3,11 +3,14 @@
 import { useState } from "react"; // import useState hook from react
 import Link from "next/link"; // import Link component from next.js
 
-export default function Nav () {
+export default function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   return (
-    <div className="pt-4 pb-12 px-5 sm:px-20 md:px-32 lg:px-32 text-center ">
-      <span className="text-3xl text-white font-normal">Omotola Elatuyi</span>
+    <div
+      className="pt-4 pb-12 px-5  lg:px-32 w-full lg:text-center max-lg:flex justify-between items-center"
+    
+    >
+      <span className="text-3xl text-white  font-normal">Omotola Elatuyi</span>
 
       <nav>
         <section className="MOBILE-MENU flex lg:hidden">
@@ -42,25 +45,25 @@ export default function Nav () {
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]  ">
               <li className="hover:border-b-2  ">
                 <a href="/" className=" text-[#1AABAC] font-bold text-xl">
-                  Portfolio
+                 Home
                 </a>
               </li>
               <li className="hover:border-b-2  ">
                 <a
-                  href="#kindWords"
+                  href="/publications"
                   className="text-[#1AABAC] font-bold text-xl"
                 >
-                  Kind words
+                    Publications
                 </a>
               </li>
               <li className="hover:border-b-2  ">
-                <a href="/about" className="text-[#1AABAC] font-bold text-xl">
-                  About
+                <a href="/about-me" className="text-[#1AABAC] font-bold text-xl">
+                  About me
                 </a>
               </li>
               <li className="hover:border-b-2  ">
-                <a href="/connect" className="text-[#1AABAC] font-bold text-xl">
-                  Say Hi!
+                <a href="/contacts" className="text-[#1AABAC] font-bold text-xl">
+                 Contacts
                 </a>
               </li>
             </ul>
@@ -94,7 +97,7 @@ export default function Nav () {
               href="/contacts"
               className="block text-white font-normal text-base "
             >
-              Contact
+              Contacts
             </Link>
           </li>
         </ul>
@@ -120,6 +123,4 @@ export default function Nav () {
     `}</style>
     </div>
   );
-};
-
-
+}
