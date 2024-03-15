@@ -12,19 +12,21 @@ import Footer from "../components/Footer";
 
 const RootLayout = ({ children }) => {
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
-      <div className="main"></div>
-      <main
-        className="app"
-        style={{ flex: 1, display: "flex", flexDirection: "column" }}
+    <html lang="en">
+      <body
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
-      <Nav />
-        {children}
-      <Footer />
-      </main>
-    </div>
+        <div className="main"></div>
+        <main
+          className="app"
+          style={{ flex: 1, display: "flex", flexDirection: "column" }}
+        >
+          <Nav />
+          {children}
+          <Footer />
+        </main>
+      </body>
+    </html>
   );
 };
 
