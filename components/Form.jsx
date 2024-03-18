@@ -9,16 +9,72 @@ const Form = () => {
     message: "",
   });
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  const [submitting, setSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(
-      `Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
-    );
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // // Validation rules
+    // let errors = {};
+    // if (!formData.name.trim()) {
+    //   errors.name = "Name is required";
+    // }
+    // if (!formData.email.trim()) {
+    //   errors.email = "Email is required";
+    // } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    //   errors.email = "Email address is invalid";
+    // }
+    // if (!formData.message.trim()) {
+    //   errors.message = "Message is required";
+    // }
+
+    // // If there are errors, set them and prevent form submission
+    // if (Object.keys(errors).length > 0) {
+    //   setErrors(errors);
+    //   return;
+    // }
+    setSubmitting(true);
+
+    //send email
+    try {
+      const response = await fetch("api/contact-us", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const { success, error } = await response.json();
+      if (success) {
+        alert("Your message has been sent!");
+      } else if (error) {
+        console.error(error);
+        alert(
+          "There was an error sending your message. Please try again later."
+        );
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      alert("There was a problem with the request. Please try again later.");
+    }
+    setSubmitting(false);
+
+
   };
 
   return (
@@ -26,11 +82,12 @@ const Form = () => {
       <div className="grid md:grid-cols-2  xl:w-2/3">
         <input
           type="text"
-          id="name"
+          // id="name"
           name="name"
           placeholder="Name"
           value={formData.name}
           onChange={handleChange}
+          // required
           style={{
             backgroundColor: "#282b30",
             padding: "8px",
@@ -39,9 +96,10 @@ const Form = () => {
             borderRadius: "5px",
           }}
         />
+        {errors.name && <span>{errors.name}</span>}
         <input
           type="email"
-          id="email"
+          // id="email"
           name="email"
           placeholder="Email"
           value={formData.email}
@@ -55,14 +113,15 @@ const Form = () => {
             border: "1px solid #fff",
           }}
         />
+        {errors.email && <span>{errors.email}</span>}
       </div>
       <textarea
-        id="message"
+        // id="message"
         name="message"
         placeholder="Message"
         value={formData.message}
         onChange={handleChange}
-        maxLength={200}
+        rows={10}
         className="xl:w-2/3 w-full resize-none"
         style={{
           borderLeft: "1px solid #fff",
@@ -73,44 +132,19 @@ const Form = () => {
           // maxHeight: "168px",
           height: "168px",
           backgroundColor: "#282b30",
-            borderRadius: "5px",
-            color: "#fff",
+          borderRadius: "5px",
+          color: "#fff",
         }}
       />
-      <Link href="/contact">
+      {errors.message && <span>{errors.message}</span>}
+      <button
+        type="submit"
+        // disabled={!formData.name || !formData.email || !formData.message}
+      >
         <div className="w-52 text-[20px] flex-center py-3 px-8 mb-20 border-2 border-[#5b5d61]">
           Send Message
         </div>
-      </Link>
-      {/*        <div className="flex flex-col ">
-      
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-            //   className="selection:border-black "
-            style={{
-              border: "2px solid ",
-              fontSize: "12px",
-              padding: "5px",
-              height: "130px",
-              backgroundColor: "#E6F3F1",
-            }}
-          />
-        </div>
-        <div className="pt-8">
-          <a href="#" className="">
-            <button
-              type="submit"
-              className="transition ease-in-out delay-0    hover:bg-[#338c8c] duration-150 hover:text-white bg-[#1AABAC] px-5 py-3  w-full"
-            >
-              Check out my LinkedIn
-            </button>
-          </a>
-        </div>
-      </div> */}
+      </button>
     </form>
   );
 };
