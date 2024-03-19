@@ -4,31 +4,37 @@ import Card from "../../components/Card";
 const card = [
   {
     quote:
-      " Tola is hands down the best colleague and friend I've ever worked with. She puts an insane amount of passion and energy into every single thing she does. She's constantly spearheading new projects that blend creativity and business results.",
-    authorName: "Sarah McCredie",
-    authorRole: "Director of Partnerships at Campaign Monitor",
-    auathorImageSrc: "/assets/images/omotola1.svg",
+      '"Leads with warnth". Tola makes work fun while focusing on key metrics with an eagle\'s eye. Everything must be incremental to the bottom-line. She is an expert in consumer and key stakeholder engagement, with the ability to drive execution from the BoP to top levels in government and society.',
+    authorName: "Kingsley Ehimika",
+    authorRole: "Yale School of Management | Strategy | Marketing | Technology",
+    authorImageSrc: "/assets/images/omotola1.svg",
+    url:"https://www.linkedin.com/in/kingsley-ehimika/overlay/about-this-profile/"
   },
   {
     quote:
-      "Tola is one of those unique individuals that can toggle between strategy and execution, seamlessly. She combines a keen eye for detail with a broader strategic mindset that sets her (and her teams) up for success. I would jump at the chance to work with tola again.",
-    authorName: "Hana Abaza",
-    authorRole: "Head of Marketing at Shopify Plus",
-    auathorImageSrc: "/assets/images/omotola1.svg",
+      "Tola worked with me for more than 2 years and her energy and enthusiasm for excellence was highly commendable. She could always be trusted with the most difficult of tasks. She was always willing to take on additional responsibilities and put in her best to deliver on the objectives.  She is a natural leader and enjoys working with colleagues and agencies.",
+    authorName: "Sanjay Pradhan",
+    authorRole: "CEO at Moneymantra Wealth Managers",
+    authorImageSrc: "/assets/images/omotola1.svg",
+    url:"https://www.linkedin.com/in/sanjay-pradhan-1ba29213/overlay/about-this-profile/"
   },
   {
     quote:
-      "There are few people on the planet that I trust as much as tola. She is one of the most dedicated, loyal and hardest working marketers I've met. She is a force to be reckoned with and one of the best people I've ever worked with.",
-    authorName: "Michael Aagaard",
-    authorRole: "Senior Conversion Optimizer",
-    auathorImageSrc: "/assets/images/omotola1.svg",
+      "Tola is really spot on on the job and get things done as fast as possible. She is highly dedicated, very objective and does not take NO for an answer. Good team player and highly result oriented and very persionate about her Job.",
+    authorName: "Femi Adesina",
+    authorRole:
+      "National Key Accounts and Modern Trade Manager -Nigeria at USL-Diageo",
+    authorImageSrc: "/assets/images/omotola1.svg",
+    url:"https://www.linkedin.com/in/femi-adesina-a9806a34/overlay/about-this-profile/ "
   },
   {
     quote:
-      "I've seen Tola turn a good marketing idea into an impactful, memorable experience time after time. And I've seen her do so humbly and authentically. I don't have a clue how she does it, but it does seem to come down to this: she cares. You can't teach caring, and you can't coach people to care. You do, or you don't. She does. And we all feel it.",
-    authorName: "Joanna Wiebe",
-    authorRole: "Co-Founder at CopyHackers",
-    auathorImageSrc: "/assets/images/omotola1.svg",
+      "Tola lead projects under Trade Category Management and Shopper Marketing in particular, both for Modern trade & General Trade, where she spent time  Managing key projects in Unilever Gulf General Trade Shopper & Customer Management department  where she demonstrated her capabilities to manage projects very well.",
+    authorName: "Bobby Mathew",
+    authorRole:
+      "Chief Marketing Officer and Partner, Prime Partners Global India, ex Head of Trade & Shopper Marketing",
+    authorImageSrc: "/assets/images/omotola1.svg",
+    url:"https://www.linkedin.com/in/bobby-mathew-8723a73/overlay/about-this-profile/"
   },
 ];
 // Cards.map((card, index) => {})
@@ -74,12 +80,11 @@ const AboutMe = () => {
         </p>
         <span className="block my-5 h-0.5 w-16 animate-pulse bg-gray-600"></span>
       </div>
-    <div className="grid lg:grid-cols-2 gap-5 text-white">
-
-      {card.map((card, index) => (
-        <Card {...card} key={index} />
-      ))}
-    </div>
+      <div className="grid lg:grid-cols-2 gap-5 text-white">
+        {card.map((card, index) => (
+          <Card {...card} key={index} />
+        ))}
+      </div>
 
       <span className="block h-0.5 w-2/3 my-10 animate-pulse bg-gray-600"></span>
     </section>

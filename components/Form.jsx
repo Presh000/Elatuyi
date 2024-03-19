@@ -73,8 +73,6 @@ const Form = () => {
       alert("There was a problem with the request. Please try again later.");
     }
     setSubmitting(false);
-
-
   };
 
   return (
@@ -93,7 +91,7 @@ const Form = () => {
             padding: "8px",
             color: "#fff",
             border: "1px solid #fff",
-            borderRadius: "5px",
+            // borderRadius: "5px",
           }}
         />
         {errors.name && <span>{errors.name}</span>}
@@ -109,42 +107,51 @@ const Form = () => {
             padding: "8px",
             color: "#fff",
             // borderLeft:"0px solid white",
-            borderRadius: "5px",
+            // borderRadius: "5px",
             border: "1px solid #fff",
           }}
         />
         {errors.email && <span>{errors.email}</span>}
       </div>
-      <textarea
-        // id="message"
-        name="message"
-        placeholder="Message"
-        value={formData.message}
-        onChange={handleChange}
-        rows={10}
-        className="xl:w-2/3 w-full resize-none"
-        style={{
-          borderLeft: "1px solid #fff",
-          borderBottom: "1px solid #fff",
-          borderRight: "1px solid #fff",
-          // fontSize: "12px",
-          padding: "8px",
-          // maxHeight: "168px",
-          height: "168px",
-          backgroundColor: "#282b30",
-          borderRadius: "5px",
-          color: "#fff",
-        }}
-      />
-      {errors.message && <span>{errors.message}</span>}
-      <button
-        type="submit"
-        // disabled={!formData.name || !formData.email || !formData.message}
-      >
-        <div className="w-52 text-[20px] flex-center py-3 px-8 mb-20 border-2 border-[#5b5d61]">
-          Send Message
-        </div>
-      </button>
+      <div className="flex flex-col">
+        <textarea
+          // id="message"
+          name="message"
+          placeholder="Message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={10}
+          className="xl:w-2/3 w-full resize-none"
+          style={{
+            borderLeft: "1px solid #fff",
+            borderBottom: "1px solid #fff",
+            borderRight: "1px solid #fff",
+            // fontSize: "12px",
+            padding: "8px",
+            // maxHeight: "168px",
+            height: "168px",
+            backgroundColor: "#282b30",
+            // borderRadius: "5px",
+            color: "#fff",
+          }}
+        />
+        {errors.message && <span>{errors.message}</span>}
+        <button
+          type="submit"
+
+          // disabled={!formData.name || !formData.email || !formData.message}
+        >
+          <div
+            className="w-52 max-md:w-full text-[20px] flex-center py-3 px-8 mb-20 border-2 border-[#5b5d61]"
+            style={{
+              border: "1px solid #fff",
+              borderTop: "0px solid #fff",
+            }}
+          >
+            Send Message
+          </div>
+        </button>
+      </div>
     </form>
   );
 };

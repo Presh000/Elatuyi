@@ -6,10 +6,7 @@ import Link from "next/link"; // import Link component from next.js
 export default function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   return (
-    <div
-      className="pt-4 pb-12 px-5  lg:px-32 w-full lg:text-center max-lg:flex justify-between items-center"
-    
-    >
+    <div className="pt-4 pb-16 px-5  lg:px-32 w-full lg:text-center max-lg:flex justify-between items-center">
       <span className="text-3xl text-white  font-normal">Omotola Elatuyi</span>
 
       <nav>
@@ -45,7 +42,7 @@ export default function Nav() {
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]  ">
               <li className="hover:border-b-2  ">
                 <a href="/" className=" text-[#1AABAC] font-bold text-xl">
-                 Home
+                  Home
                 </a>
               </li>
               <li className="hover:border-b-2  ">
@@ -53,17 +50,23 @@ export default function Nav() {
                   href="/publications"
                   className="text-[#1AABAC] font-bold text-xl"
                 >
-                    Publications
+                  Publications
                 </a>
               </li>
               <li className="hover:border-b-2  ">
-                <a href="/about-me" className="text-[#1AABAC] font-bold text-xl">
+                <a
+                  href="/about-me"
+                  className="text-[#1AABAC] font-bold text-xl"
+                >
                   About me
                 </a>
               </li>
               <li className="hover:border-b-2  ">
-                <a href="/contacts" className="text-[#1AABAC] font-bold text-xl">
-                 Contacts
+                <a
+                  href="/contacts"
+                  className="text-[#1AABAC] font-bold text-xl"
+                >
+                  Contacts
                 </a>
               </li>
             </ul>

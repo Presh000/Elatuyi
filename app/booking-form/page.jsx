@@ -3,8 +3,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 // import DatePicker from "react-datepicker";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
+
+// import "react-datepicker/dist/react-datepicker.css";
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const BookingForm = () => {
     email: "",
     companyName: "",
     eventLocation: "",
-    eventDate: "",
+    eventDate: null,
     dateFlexible: "",
     noOfAttendees: "",
     attendeesValue: "",
@@ -72,6 +73,9 @@ const BookingForm = () => {
   useEffect(() => {
     console.log(formData.dateFlexible);
   }, [formData.dateFlexible]);
+  useEffect(() => {
+    console.log(formData.eventDate);
+  }, [formData.eventDate]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -90,7 +94,7 @@ const BookingForm = () => {
       <p className="text-[42px] font-semibold pb-5 text-[#EC2E57] ">
         Find out more
       </p>
-      <p className="text-[#7E7E7E] pb-20">
+      <p className="text-[#7E7E7E] pb-16">
         To enquire about engaging The Business of Trust for your next event,
         please submit the form below.
       </p>
@@ -187,6 +191,21 @@ const BookingForm = () => {
         <label className="text-[#7E7E7E] pt-8 pb-3">
           When will this event be held?
         </label>
+        <DatePicker
+          className="text-black"
+          name="eventDate"
+          value={formData.eventDate}
+          selected={formData.eventDate}
+          dateFormat={"dd/MM/yyyy"}
+          minDate={new Date()}
+          isClearable
+          onChange={(date) => {
+            setFormData((prevFormData) => ({
+              ...prevFormData,
+              eventDate: date,
+            }));
+          }}
+        />
         <label className="text-[#7E7E7E] pt-8 pb-3">
           Is your date flexible?
         </label>

@@ -13,15 +13,15 @@ const Contacts = () => {
       </Link>
       <div className="leading-8 text-[18px]">
         <p>
-          I am available for general questions/comments/concerns as well as
-          potential employment opportunities in writing, editing,
-          or teaching/tutoring.
+          I am available for general questions/comments/concerns as well as
+          potential employment opportunities in writing, editing, or
+          teaching/tutoring.
         </p>
         <br />
-        <p>You can also tweet me @scottjbroker.</p>
+        <span>You can also tweet me @scottjbroker.</span>
         <br />
         <p>
-          For other matters, please be in touch with my agent, Kent Wolf:
+          For other matters, please be in touch with my agent, Kent Wolf:
           kent@neonliterary.com.
         </p>
         <br />
