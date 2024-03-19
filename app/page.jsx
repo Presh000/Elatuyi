@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Spinner from "../components/Spinner";
 
 const Home = () => {
   return (

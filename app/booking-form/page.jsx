@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 // import DatePicker from "react-datepicker";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Spinner from "../../components/Spinner";
 
 // import "react-datepicker/dist/react-datepicker.css";
 
@@ -27,6 +28,8 @@ const BookingForm = () => {
   const [isSpeakingRequest1, setIsSpeakingRequest1] = useState(false);
   const [isSpeakingRequest2, setIsSpeakingRequest2] = useState(false);
   const [isSpeakingRequest3, setIsSpeakingRequest3] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const toogleSpeakingRequest = (option) => {
     if (option === 1) {
@@ -84,9 +87,32 @@ const BookingForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
-    console.log(formData);
-    alert("Form submitted successfully");
+    setTimeout(() => {
+      console.log(formData);
+      setIsLoading(false);
+    }, 2000);
+    setTimeout(() => {
+      alert("Form submitted successfully");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        companyName: "",
+        eventLocation: "",
+        eventDate: null,
+        dateFlexible: "",
+        noOfAttendees: "",
+        attendeesValue: "",
+        speakingRequest: "",
+      });
+      setIsDateFlexible1(false);
+      setIsDateFlexible2(false);
+      setIsSpeakingRequest1(false);
+      setIsSpeakingRequest2(false);
+      setIsSpeakingRequest3(false);
+    }, 2500);
   };
 
   return (
@@ -98,7 +124,10 @@ const BookingForm = () => {
         To enquire about engaging The Business of Trust for your next event,
         please submit the form below.
       </p>
-      <form onSubmit={handleSubmit} className="w-full flex-center flex-col">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full flex-center flex-col text-black"
+      >
         <label className="text-[#7E7E7E] pb-3">First Name (Required)</label>
         <input
           type="text"
@@ -192,13 +221,12 @@ const BookingForm = () => {
           When will this event be held?
         </label>
         <DatePicker
-          className="text-black"
+          className="text-black p-1 border-0"
           name="eventDate"
           value={formData.eventDate}
           selected={formData.eventDate}
           dateFormat={"dd/MM/yyyy"}
           minDate={new Date()}
-          isClearable
           onChange={(date) => {
             setFormData((prevFormData) => ({
               ...prevFormData,
@@ -209,7 +237,7 @@ const BookingForm = () => {
         <label className="text-[#7E7E7E] pt-8 pb-3">
           Is your date flexible?
         </label>
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-5 text-[#7E7E7E]">
           <div
             onClick={() => toggleDataFlexible(1)}
             className="cursor-pointer items-center flex space-x-2 "
@@ -234,8 +262,9 @@ const BookingForm = () => {
                   width="40"
                   height="40"
                   viewBox="0 0 24 24"
-                  fill="#F26436"
-                  strokeWidth="5"
+                  color="red"
+                  fill="black"
+                  // strokeWidth="5"
                 >
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                 </svg>
@@ -264,10 +293,11 @@ const BookingForm = () => {
               {isDateFlexible2 && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="40"
+                  height="40"
                   viewBox="0 0 24 24"
-                  fill="#F26436"
+                  color="red"
+                  fill="black"
                 >
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                 </svg>
@@ -316,7 +346,7 @@ const BookingForm = () => {
         <label className="text-[#7E7E7E] pt-8 pb-3">
           Is this a paid or unpaid speaking request?
         </label>
-        <div className="flex items-center  pt-8 pb-3 space-x-5">
+        <div className="flex items-center  pt-8 pb-3 space-x-5 text-[#7E7E7E]">
           <div
             onClick={() => toogleSpeakingRequest(1)}
             className="cursor-pointer items-center flex space-x-2"
@@ -338,10 +368,11 @@ const BookingForm = () => {
               {isSpeakingRequest1 && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="40"
+                  height="40"
                   viewBox="0 0 24 24"
-                  fill="#F26436"
+                  color="red"
+                  fill="black"
                 >
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                 </svg>
@@ -370,10 +401,11 @@ const BookingForm = () => {
               {isSpeakingRequest2 && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="40"
+                  height="40"
                   viewBox="0 0 24 24"
-                  fill="#F26436"
+                  color="red"
+                  fill="black"
                 >
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                 </svg>
@@ -418,9 +450,12 @@ const BookingForm = () => {
         <div className="w-52 text-[20px] py-3 pt-12">
           <button
             type="submit"
-            className="transition ease-in-out delay-0    hover:bg-[#338c8c] duration-150 hover:text-white bg-[#F26436] px-5 py-3  w-full"
+            className="transition ease-in-out delay-0    hover:bg-[#338c8c] duration-150 hover:text-white bg-[#F26436] h-12 w-12  w-full"
           >
-            Send
+            {isLoading ? <Spinner /> : "Send"}
+
+            {/* {isLoading && <Spinner />}
+            <span className={isLoading ? "invisible" : "visible"}>Send</span> */}
           </button>
         </div>
       </form>

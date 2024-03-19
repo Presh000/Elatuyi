@@ -7,16 +7,16 @@ const card = [
       '"Leads with warnth". Tola makes work fun while focusing on key metrics with an eagle\'s eye. Everything must be incremental to the bottom-line. She is an expert in consumer and key stakeholder engagement, with the ability to drive execution from the BoP to top levels in government and society.',
     authorName: "Kingsley Ehimika",
     authorRole: "Yale School of Management | Strategy | Marketing | Technology",
-    authorImageSrc: "/assets/images/omotola1.svg",
-    url:"https://www.linkedin.com/in/kingsley-ehimika/overlay/about-this-profile/"
+    authorImageSrc: "/assets/images/kingEhim.jpg",
+    url: "https://www.linkedin.com/in/kingsley-ehimika/overlay/about-this-profile/",
   },
   {
     quote:
       "Tola worked with me for more than 2 years and her energy and enthusiasm for excellence was highly commendable. She could always be trusted with the most difficult of tasks. She was always willing to take on additional responsibilities and put in her best to deliver on the objectives.  She is a natural leader and enjoys working with colleagues and agencies.",
     authorName: "Sanjay Pradhan",
     authorRole: "CEO at Moneymantra Wealth Managers",
-    authorImageSrc: "/assets/images/omotola1.svg",
-    url:"https://www.linkedin.com/in/sanjay-pradhan-1ba29213/overlay/about-this-profile/"
+    authorImageSrc: "/assets/images/sanjay.jpg",
+    url: "https://www.linkedin.com/in/sanjay-pradhan-1ba29213/overlay/about-this-profile/",
   },
   {
     quote:
@@ -24,8 +24,8 @@ const card = [
     authorName: "Femi Adesina",
     authorRole:
       "National Key Accounts and Modern Trade Manager -Nigeria at USL-Diageo",
-    authorImageSrc: "/assets/images/omotola1.svg",
-    url:"https://www.linkedin.com/in/femi-adesina-a9806a34/overlay/about-this-profile/ "
+    authorImageSrc: "/assets/images/femi.jpg",
+    url: "https://www.linkedin.com/in/femi-adesina-a9806a34/overlay/about-this-profile/ ",
   },
   {
     quote:
@@ -33,8 +33,8 @@ const card = [
     authorName: "Bobby Mathew",
     authorRole:
       "Chief Marketing Officer and Partner, Prime Partners Global India, ex Head of Trade & Shopper Marketing",
-    authorImageSrc: "/assets/images/omotola1.svg",
-    url:"https://www.linkedin.com/in/bobby-mathew-8723a73/overlay/about-this-profile/"
+    authorImageSrc: "/assets/images/bobby.jpg",
+    url: "https://www.linkedin.com/in/bobby-mathew-8723a73/overlay/about-this-profile/",
   },
 ];
 // Cards.map((card, index) => {})
