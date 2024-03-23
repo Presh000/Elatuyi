@@ -13,7 +13,7 @@ const Home = () => {
           />
           <div>
             <p className="home_text text-[18px] md:text-[21px] lg:text-[18px] xl:text-[20px] leading-7 md:leading-8  lg:leading-7 xl:leading-8  ">
-              Omotola Elatuyi is a tenacious, passionate marketer who loves
+              Omotola Bamigbaiye is a tenacious, passionate marketer who loves
               turning bold ideas into impactful & memorable experiences.
             </p>
             <p className="home_text text-[18px] md:text-[21px] lg:text-[18px] xl:text-[20px] leading-7 md:leading-8  lg:leading-7 xl:leading-8">

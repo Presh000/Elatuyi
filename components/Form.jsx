@@ -34,7 +34,7 @@ const Form = () => {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
-      to_name: "Omotola Elatuyi",
+      to_name: "Omotola Bamigbaiye",
     };
 
     setTimeout(() => {

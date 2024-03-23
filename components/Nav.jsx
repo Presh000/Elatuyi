@@ -9,7 +9,7 @@ export default function Nav() {
     <div className="pt-4 pb-16 px-5  lg:px-32 w-full lg:text-center max-lg:flex justify-between items-center">
       <Link href="/" className="block text-white font-normal text-base ">
         <span className="text-3xl text-white  font-normal">
-          Omotola Elatuyi
+          Omotola Bamigbaiye
         </span>
       </Link>
 

@@ -102,7 +102,7 @@ const BookingForm = () => {
       no_of_attendees: formData.noOfAttendees,
       attendees_value: formData.attendeesValue,
       speaking_request: formData.speakingRequest,
-      to_name: "Omotola Elatuyi",
+      to_name: "Omotola Bamigbaiye",
     };
 
     setTimeout(() => {
