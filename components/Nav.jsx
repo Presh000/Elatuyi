@@ -7,7 +7,11 @@ export default function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   return (
     <div className="pt-4 pb-16 px-5  lg:px-32 w-full lg:text-center max-lg:flex justify-between items-center">
-      <span className="text-3xl text-white  font-normal">Omotola Elatuyi</span>
+      <Link href="/" className="block text-white font-normal text-base ">
+        <span className="text-3xl text-white  font-normal">
+          Omotola Elatuyi
+        </span>
+      </Link>
 
       <nav>
         <section className="MOBILE-MENU flex lg:hidden">
@@ -23,7 +27,7 @@ export default function Nav() {
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
             {/* // toggle class based on isNavOpen state */}
             <div
-              className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
+              className="CROSS-ICON absolute top-0 right-0 px-8 py-8 "
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             >
               <svg
@@ -41,31 +45,25 @@ export default function Nav() {
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]  ">
               <li className="hover:border-b-2  ">
-                <a href="/" className=" text-[#1AABAC] font-bold text-xl">
+                <a href="/" className=" text-white font-bold text-xl">
                   Home
                 </a>
               </li>
               <li className="hover:border-b-2  ">
                 <a
                   href="/publications"
-                  className="text-[#1AABAC] font-bold text-xl"
+                  className="text-white font-bold text-xl"
                 >
                   Publications
                 </a>
               </li>
               <li className="hover:border-b-2  ">
-                <a
-                  href="/about-me"
-                  className="text-[#1AABAC] font-bold text-xl"
-                >
+                <a href="/about-me" className="text-white font-bold text-xl">
                   About me
                 </a>
               </li>
               <li className="hover:border-b-2  ">
-                <a
-                  href="/contacts"
-                  className="text-[#1AABAC] font-bold text-xl"
-                >
+                <a href="/contacts" className="text-white font-bold text-xl">
                   Contacts
                 </a>
               </li>
@@ -116,7 +114,8 @@ export default function Nav() {
         height: 100vh;
         top: 0;
         left: 0;
-        background: white;
+        // color: white;
+        background: #282b30;
         z-index: 10;
         display: flex;
         flex-direction: column;

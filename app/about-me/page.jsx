@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Card from "../../components/Card";
 
 const card = [
@@ -37,11 +36,10 @@ const card = [
     url: "https://www.linkedin.com/in/bobby-mathew-8723a73/overlay/about-this-profile/",
   },
 ];
-// Cards.map((card, index) => {})
 
 const AboutMe = () => {
   return (
-    <section className="w-full flex-center flex-col  px-5 ">
+    <section className="w-full flex-center flex-col  px-5 app-section ">
       <div className="flex w-full flex-col">
         <p className="md:text-[42px] text-[36px] font-semibold text-[#EC2E57]">
           About

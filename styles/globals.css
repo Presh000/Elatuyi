@@ -34,7 +34,10 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col;
+}
+.app-section {
+  @apply  max-w-7xl mx-auto sm:px-16 px-6;
 }
 
 .black_btn {
@@ -130,9 +133,13 @@
 }
 
 .home_text {
-    /* font-size: 15.6px; */
-    font-weight: 400;
-    /* line-height: 30px; */
-    padding: 5px 0 5px 0;
-    color: #fff;
+  /* font-size: 15.6px; */
+  font-weight: 400;
+  /* line-height: 30px; */
+  padding: 5px 0 5px 0;
+  color: #fff;
+}
+
+.newBook {
+  background-image: "url(../public/assets/images/chair.jpeg)";
 }
