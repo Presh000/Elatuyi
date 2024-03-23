@@ -88,6 +88,7 @@ const BookingForm = () => {
 
     const serviceId = "service_2rgqohe";
     const templateId = "template_x3hyfka";
+    const publicKey = "Vsu5uGT_jSJg6mm3B";
 
     const templateParams = {
       from_name: `${formData.lastName} ${formData.firstName}`,
@@ -105,39 +106,32 @@ const BookingForm = () => {
     };
 
     setTimeout(() => {
-      emailjs
-        .send(
-          serviceId,
-          templateId,
-          templateParams,
-          process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_API
-        )
-        .then(
-          function (response) {
-            console.log("SUCCESS!", response.status, response.text);
-            alert("Message sent successfully!");
-            setFormData({
-              firstName: "",
-              lastName: "",
-              email: "",
-              companyName: "",
-              eventLocation: "",
-              eventDate: null,
-              dateFlexible: "",
-              noOfAttendees: "",
-              attendeesValue: "",
-              speakingRequest: "",
-            });
-            setIsDateFlexible1(false);
-            setIsDateFlexible2(false);
-            setIsSpeakingRequest1(false);
-            setIsSpeakingRequest2(false);
-            setIsSpeakingRequest3(false);
-          },
-          function (error) {
-            console.log("FAILED...", error);
-          }
-        );
+      emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          // alert("Message sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            companyName: "",
+            eventLocation: "",
+            eventDate: null,
+            dateFlexible: "",
+            noOfAttendees: "",
+            attendeesValue: "",
+            speakingRequest: "",
+          });
+          setIsDateFlexible1(false);
+          setIsDateFlexible2(false);
+          setIsSpeakingRequest1(false);
+          setIsSpeakingRequest2(false);
+          setIsSpeakingRequest3(false);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
       setIsLoading(false);
       alert("Form submitted successfully");
     }, 1000);

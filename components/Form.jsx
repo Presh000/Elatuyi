@@ -38,28 +38,21 @@ const Form = () => {
     };
 
     setTimeout(() => {
-      emailjs
-        .send(
-          serviceId,
-          templateId,
-          templateParams,
-          publicKey
-        )
-        .then(
-          function (response) {
-            console.log("SUCCESS!", response.status, response.text);
-            alert("Message sent successfully!");
-            setFormData({
-              name: "",
-              email: "",
-              message: "",
-            });
-          },
-          function (error) {
-            console.log("FAILED...", error);
-          }
+      emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
         );
-      setIsSubmitting(false);
+        setIsSubmitting(false);
+        alert("Message sent successfully!");
     }, 1000);
   };
 
