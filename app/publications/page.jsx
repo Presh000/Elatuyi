@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const Pubications = () => {
@@ -251,10 +252,13 @@ const Pubications = () => {
           </div>
         </div>
       </section>
-      <section
-        className="bg-cover w-full h-[80vh] bg-center items-center justify-center flex flex-col  "
+      {/* <section
+        className=" items-center justify-center flex flex-col  "
         style={{
           backgroundImage: "url('./assets/images/newBook.jpg')",
+          width: "100%",
+          height: "679px",
+          backgroundSize: "cover",
         }}
       >
         <Link href="/">
@@ -263,6 +267,29 @@ const Pubications = () => {
           </div>
         </Link>
       </section>
+      <Image
+        src="/assets/images/newBook.jpg"
+        width={9999}
+        height={679}
+        // className="h-[80vh] w-full object-cover"
+      /> */}
+
+      <div className="relative">
+        <Image
+          src="/assets/images/newBook.jpg"
+          width={9999}
+          height={679}
+          className="object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center ">
+          <Link href="/" className="">
+            {/* border-t-4 border-gray-300 rounded-full animate-spin h-7 w-7 */}
+            <div className="text-white hover:text-[#EC2E57] text-center font-bold text-2xl md:text-4xl lg:text-4xl ">
+              Order My New Book
+            </div>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 };
