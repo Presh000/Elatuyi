@@ -28,6 +28,7 @@ const Form = () => {
 
     const serviceId = "service_2rgqohe";
     const templateId = "template_4x6p4nt";
+    const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_API;
 
     const templateParams = {
       from_name: formData.name,
@@ -42,7 +43,7 @@ const Form = () => {
           serviceId,
           templateId,
           templateParams,
-          process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_API
+          publicKey
         )
         .then(
           function (response) {
